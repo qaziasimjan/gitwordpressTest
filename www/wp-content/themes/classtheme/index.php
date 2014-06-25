@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+GitWordPressLayout::$Viewbag['sTitle'] = "Rich's blog";
+GitWordPressLayout::layout("_layout.php");
+?>
 <div id="main">
 	<div id="content">
 		<h1>Main Area</h1>
@@ -11,5 +14,3 @@
 </div>
 <?php get_sidebar(); ?>
 </div>
-<div id="delimiter"></div>
-<?php get_footer(); ?>
