@@ -19,6 +19,7 @@ body {
 	width: 75%;
 	border: 2px #a2a2a2 solid;
 	float: left;
+	background: url('../images/Jellyfish.jpg');
 }
 
 #sidebar {
@@ -39,4 +40,10 @@ body {
 	font-size: 11pt;
 	font-family: verdana;
 	font-weight: bold;
+}
+
+.mainHeading {
+	font-family: 'Tangerine', serif;
+	font-size: 48px;
+	text-shadow: 4px 4px 4px #aaa;
 }
