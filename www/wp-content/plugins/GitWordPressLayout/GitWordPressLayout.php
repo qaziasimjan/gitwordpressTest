@@ -14,8 +14,9 @@ class GitWordPressLayout{
 	public static function layout($sLayout){
 		if(!GitWordPressLayout::$Viewbag['bInLayout']){
 			GitWordPressLayout::$Viewbag['bInLayout'] = true;
-			$sTemplate = get_page_template()?basename(get_page_template()):'index.php';
-			GitWordPressLayout::$Viewbag['sPage'] = str_replace('.php','',$sTemplate);
+			$path = explode("/", get_permalink(get_queried_object_id())); // splitting the path
+			end($path);
+			GitWordPressLayout::$Viewbag['sPage'] = prev($path);
 			include_once get_template_directory() . '/' . $sLayout;
 			//don't want to output anything from the layout the first time
 			exit;
@@ -23,6 +24,7 @@ class GitWordPressLayout{
 	}
 	
 	public static function renderBody(){
-		include get_template_directory() . '/'. GitWordPressLayout::$Viewbag['sPage'] . '.php';
+		$sTemplate = get_page_template()?basename(get_page_template()):'index.php';
+		include get_template_directory() . '/'. $sTemplate;
 	}
 }
