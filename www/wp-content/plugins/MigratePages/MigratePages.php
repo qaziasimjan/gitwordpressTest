@@ -32,7 +32,7 @@ class MigratePages{
 		$aResults = $stmt->fetchAll(PDO::FETCH_NUM);
 		file_put_contents(ABSPATH . 'wp-content/uploads/pages.sql', 
 			$sHeading);
-
+		
 		//go through the rows to insert
 		foreach ($aResults as $nRow=>$aRow){
 			if($nRow != 0) $sRow = ",\n('";
@@ -57,7 +57,7 @@ class MigratePages{
 		$stmt = $db->prepare($sql);
 		$stmt->execute();
 		echo $stmt->rowCount() . " posts imported";
-
+		
 	}
 	public static function init()
 	{
