@@ -1,11 +1,11 @@
 <?php 
 /*
-Plugin Name: Migrate Pages Plugin
-Plugin URI: http://github.com/rhildred/gitwordpress/
+Plugin Name: Drum Plugin
+Plugin URI: http://github.com/qaziasimjan/gitwordpress/
 Description: Export pages into git, and import them
-Author: Rich Hildred
+Author: qaziasimjan
 Version: 1.0
-Author URI: http://syndicateme.net/
+
 */
 Class Drum extends PDO {
 	public static function makeConnection() {
@@ -16,11 +16,11 @@ Class Drum extends PDO {
 	}	
 
 
- function GetAll($params = null, $fetchStyle = PDO::FETCH_ASSOC){
+ public static function GetAll($params = null, $fetchStyle = PDO::FETCH_ASSOC){
 	$result = null;
-	
+	global $table_prefix;
 		$sql = 'SELECT * FROM ' . $table_prefix . 'drum';
-		$database_handler = drum::makeConnection();
+		$database_handler = self::makeConnection();
 		$statement_handler = $database_handler->prepare($sql);
 		$statement_handler->execute();
 		$result = $statement_handler->fetch($fetchStyle);
