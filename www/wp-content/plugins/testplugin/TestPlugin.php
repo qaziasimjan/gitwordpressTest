@@ -2,11 +2,10 @@
 
 /*
  Plugin Name: Test Plugin
-Plugin URI: http://github.com/rhildred/gitwordpress/
-Description: A test
-Author: Rich Hildred
+Plugin URI: http://github.com/qaziasimjan/gitwordpress/
+Description: test
+Author: qaziasimjan
 Version: 1.0
-Author URI: http://syndicateme.net/
 */
 
 class TestPlugin{
