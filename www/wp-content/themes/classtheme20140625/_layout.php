@@ -2,6 +2,7 @@
 <html>
 <head>
 <title><?php echo GitWordPressLayout::$Viewbag['sTitle'] ?></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css"
 	href="//fonts.googleapis.com/css?family=Tangerine" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
@@ -22,15 +23,12 @@
 									class="icon-bar"></span> <span class="icon-bar"></span> <span
 									class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="<?php echo home_url(); ?>">SITE TITLE</a>
+							<a class="navbar-brand" href="<?php echo home_url(); ?>"><img  src="<?php echo get_template_directory_uri(); ?>/images/Jellyfish.jpg" height="25" width="60" /></a>
 						</div>
-
 						<!-- Collect the nav links, forms, and other content for toggling -->
 			
 
-   						<?php BootStrapMenusPlugin::displayMenu ();?>
-
-				
+   						<?php BootStrapMenusPlugin::displayMenu ();?>				
 				</nav>
 			</div>
 			<!-- #access -->

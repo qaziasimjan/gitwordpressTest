@@ -19,3 +19,4 @@ class TestPlugin{
 		return "See Ya";
 	}
 }
+print_r(TestPlugin::getHello());
