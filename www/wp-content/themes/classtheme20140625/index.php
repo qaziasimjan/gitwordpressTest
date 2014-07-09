@@ -13,4 +13,5 @@ GitWordPressLayout::layout("_layout.php");
 		<p><?php the_content(__('(more...)')); ?></p>
 		<hr> <?php endwhile;endif?>
 		</div>
+		<p><?php ?></p>
 </div>
