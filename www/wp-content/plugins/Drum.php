@@ -7,7 +7,6 @@ Author: qaziasimjan
 Version: 2.1.0
 
 */
-require_once('../../wp-config.php');
 Class Drum extends PDO {
 	public static function makeConnection() {
 		$dbh = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, 
