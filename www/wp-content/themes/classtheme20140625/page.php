@@ -14,6 +14,7 @@ GitWordPressLayout::layout ( "_layout.php" );
 		<p><?php the_content(__('(more...)')); ?></p>
 		<hr> <?php endwhile; else: ?>
 <p><?php _e('Sorry, no posts matched your criteria.'); ?></p><?php endif; ?>
+
 </div>
 	<div id="sidebar">
 		<h2><?php _e('Categories'); ?></h2>

@@ -25,7 +25,7 @@ Class Drum extends PDO {
 		$database_handler = self::makeConnection();
 		$statement_handler = $database_handler->prepare($sql);
 		$statement_handler->execute();
-		$result = $statement_handler->fetch($fetchStyle);		
+		$result = $statement_handler->fetchAll($fetchStyle);		
 	return $result;
 	}
 	catch(PDOException $e){
