@@ -26,7 +26,7 @@ Class Drum extends PDO {
 		$statement_handler = $database_handler->prepare($sql);
 		$statement_handler->execute();
 		$result = $statement_handler->fetchAll($fetchStyle);		
-	return $result;
+		return $result;
 	}
 	catch(PDOException $e){
 		echo ('{"error":'. $e->getMessage().'}');

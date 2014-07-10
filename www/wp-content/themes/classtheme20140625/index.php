@@ -18,17 +18,18 @@ Drum::GetAll();
 echo 'Server date and time is: ';
 echo date('l, F j, Y \a\t G:i:s');
 ?>
-<table><?php $oDrum = new Drum();$c = $oDrum->GetAll($result);
+<table class="tbl_row"><?php $oDrum = new Drum();$c = $oDrum->GetAll($result);
 if(!empty($c)) {
-	foreach($c as $r){
-	
-		for($i = 0;$i<3;$i++){
+	foreach($c as $r){		
 		echo '<tr>';
-		echo '<td>'.json_encode( preg_replace('/"([^"]+)"\s*:\s*/', '', $r['iddrum'])).'</td>';
-		echo '<td>'.json_encode( preg_replace('/"([^"]+)"\s*:\s*/', '', $r['name'])).'</td>';
-		echo '<td>'.json_encode( preg_replace('/"([^"]+)"\s*:\s*/', '', $r['description'])).'</td>';
-		echo '</tr>';
-		}
+		
+		echo '<td>'. $r['iddrum'].'</td>';
+		
+		echo '<td>'. $r['name'].'</td>';
+		
+		echo '<td>'. $r['description'].'</td>';
+	
+		echo '</tr>';		
 		}
 }
 echo json_encode($oDrum->GetAll($result)); ?> </table>

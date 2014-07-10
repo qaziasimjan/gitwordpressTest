@@ -82,3 +82,17 @@ body {
 	font-size: 48px;
 	text-shadow: 4px 4px 4px #aaa;
 }
+.tbl_row {
+	border: 2px solid #999;
+	padding:5%;
+	margin: 5%;
+	background-color: #ccc;
+}
+.tbl_row td{
+	border: 2px solid #999;
+	padding: 10px;
+	margin-right: 5%;
+}
+@media max-width 320 {
+	
+}
