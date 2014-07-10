@@ -28,7 +28,13 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 			
 
-   						<?php BootStrapMenusPlugin::displayMenu ();?>				
+   						<?php BootStrapMenusPlugin::displayMenu ();?>	
+   						<form action="<?php echo bloginfo('url'); ?>/wp-content/plugins/Drum.php" method="get">
+   						<input type="text" placeholder="Search" value="" name="q" title="Search for:" />
+   						<button type="submit">Search</button>			
+
+
+</form>
 				</nav>
 			</div>
 			<!-- #access -->

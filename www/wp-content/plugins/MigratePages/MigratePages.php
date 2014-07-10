@@ -59,13 +59,10 @@ class MigratePages{
 		echo $stmt->rowCount() . " posts imported";
 		
 	}
-	public static function setUpPage(){
-		echo '<p>'.'Hello Asim'.'</p>';
-	}
-	
 	public static function init()
 	{
-		add_posts_page( "setUpPage", "MigratePages::setUpPage");				
+		add_posts_page( "Import Posts", "Import Posts", "delete_others_posts", "import", "MigratePages::import");
+		add_posts_page( "Export Posts", "Export Posts", "read", "export", "MigratePages::export");		
 	}
 }
 

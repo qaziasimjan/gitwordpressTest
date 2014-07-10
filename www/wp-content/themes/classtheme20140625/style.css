@@ -93,6 +93,11 @@ body {
 	padding: 10px;
 	margin-right: 5%;
 }
-@media max-width 320 {
-	
+@media ( min-width : 100px) and (max-width: 768px) {
+.navbar-collapse li, .navbar-collapse>.active>a, .navbar-default .navbar-toggle:hover {	
+	background: transparent;
+	border: transparent;
+	box-shadow: 5px 5px 3px transparent;
+	-moz-box-shadow: 5px 5px 3pxtransparent;	
+	}
 }

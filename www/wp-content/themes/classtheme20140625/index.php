@@ -14,24 +14,5 @@ Drum::GetAll();
 		<p><?php the_content(__('(more...)')); ?></p>
 		<hr> <?php endwhile;endif?>
 		</div>	
-		<?php 
-echo 'Server date and time is: ';
-echo date('l, F j, Y \a\t G:i:s');
-?>
-<table class="tbl_row"><?php $oDrum = new Drum();$c = $oDrum->GetAll($result);
-if(!empty($c)) {
-	foreach($c as $r){		
-		echo '<tr>';
-		
-		echo '<td>'. $r['iddrum'].'</td>';
-		
-		echo '<td>'. $r['name'].'</td>';
-		
-		echo '<td>'. $r['description'].'</td>';
-	
-		echo '</tr>';		
-		}
-}
-echo json_encode($oDrum->GetAll($result)); ?> </table>
-			
+		<?php echo bloginfo('url').'/wp-content/plugings/Drum.php';?>			
 </div>

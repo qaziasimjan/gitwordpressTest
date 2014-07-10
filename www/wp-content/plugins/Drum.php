@@ -16,12 +16,14 @@ Class Drum extends PDO {
 	}
 	public function Drum(){}	
 
-
  public static function GetAll($params = null, $fetchStyle = PDO::FETCH_ASSOC){
+ 	if($sREQ != NULL){
+ 		$sREQ = $_GET['q'];
+ 	}
 	$result = null;
-	global $table_prefix;
-	try{
-		$sql = 'SELECT * FROM ' . $table_prefix . 'drum';
+	global $table_prefix;	
+	try{		
+		$sql = ('SELECT * FROM ' . $table_prefix . 'drum WHERE iddrum LIKE "' . $sREQ . '%" OR name LIKE "'.$sREQ. '%" OR description LIKE"'. $sREQ.'%"');
 		$database_handler = self::makeConnection();
 		$statement_handler = $database_handler->prepare($sql);
 		$statement_handler->execute();
@@ -31,7 +33,7 @@ Class Drum extends PDO {
 	catch(PDOException $e){
 		echo ('{"error":'. $e->getMessage().'}');
 	}
-	if(Drum::GetAll != null){
+	if(self::GetAll != null){
 		$database_handler = null;
 	}
 }
