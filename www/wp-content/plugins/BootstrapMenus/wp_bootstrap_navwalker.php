@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Class Name: wp_bootstrap_navwalker
  * GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker
@@ -10,7 +11,9 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
 
+
 class wp_bootstrap_navwalker extends Walker_Nav_Menu {
+
 
 	/**
 	 * @see Walker::start_lvl()
@@ -24,6 +27,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 		$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
 	}
 
+
 	/**
 	 * @see Walker::start_el()
 	 * @since 3.0.0
@@ -36,6 +40,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 	 */
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+
 
 		/**
 		 * Dividers, Headers or Disabled
@@ -55,30 +60,40 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
 		} else {
 
+
 			$class_names = $value = '';
+
 
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 			$classes[] = 'menu-item-' . $item->ID;
 
+
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+
 
 			if ( $args->has_children )
 				$class_names .= ' dropdown';
 
+
 			if ( in_array( 'current-menu-item', $classes ) )
 				$class_names .= ' active';
 
+
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+
 
 			$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
 			$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
+
 			$output .= $indent . '<li' . $id . $value . $class_names .'>';
+
 
 			$atts = array();
 			$atts['title']  = ! empty( $item->title )	? $item->title	: '';
 			$atts['target'] = ! empty( $item->target )	? $item->target	: '';
 			$atts['rel']    = ! empty( $item->xfn )		? $item->xfn	: '';
+
 
 			// If item has_children add atts to a.
 			if ( $args->has_children && $depth === 0 ) {
@@ -90,7 +105,9 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 			}
 
+
 			$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
+
 
 			$attributes = '';
 			foreach ( $atts as $attr => $value ) {
@@ -100,7 +117,9 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 				}
 			}
 
+
 			$item_output = $args->before;
+
 
 			/*
 			 * Glyphicons
@@ -114,13 +133,16 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			else
 				$item_output .= '<a'. $attributes .'>';
 
+
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
 			$item_output .= $args->after;
 
+
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 		}
 	}
+
 
 	/**
 	 * Traverse elements to create list from elements.
@@ -146,14 +168,18 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
         if ( ! $element )
             return;
 
+
         $id_field = $this->db_fields['id'];
+
 
         // Display this element.
         if ( is_object( $args[0] ) )
            $args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
 
+
         parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
     }
+
 
 	/**
 	 * Menu Fallback
@@ -169,36 +195,48 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 	public static function fallback( $args ) {
 		if ( current_user_can( 'manage_options' ) ) {
 
+
 			extract( $args );
 
+
 			$fb_output = null;
+
 
 			if ( $container ) {
 				$fb_output = '<' . $container;
 
+
 				if ( $container_id )
 					$fb_output .= ' id="' . $container_id . '"';
+
 
 				if ( $container_class )
 					$fb_output .= ' class="' . $container_class . '"';
 
+
 				$fb_output .= '>';
 			}
 
+
 			$fb_output .= '<ul';
+
 
 			if ( $menu_id )
 				$fb_output .= ' id="' . $menu_id . '"';
 
+
 			if ( $menu_class )
 				$fb_output .= ' class="' . $menu_class . '"';
+
 
 			$fb_output .= '>';
 			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">Add a menu</a></li>';
 			$fb_output .= '</ul>';
 
+
 			if ( $container )
 				$fb_output .= '</' . $container . '>';
+
 
 			echo $fb_output;
 		}

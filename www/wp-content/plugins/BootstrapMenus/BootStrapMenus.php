@@ -1,5 +1,6 @@
 <?php
 
+
 /*
  Plugin Name: BootStrap Menus Plugin
 Plugin URI: http://github.com/rhildred/gitwordpress/
@@ -9,7 +10,9 @@ Version: 1.0
 Author URI: http://syndicateme.net/
 */
 
+
 require_once 'wp_bootstrap_navwalker.php';
+
 
 class BootStrapMenusPlugin{
 	static public function displayMenu()
@@ -29,5 +32,6 @@ class BootStrapMenusPlugin{
     	echo '</div><!-- /.navbar-collapse -->'; 
 	}
 }
+
 
 add_theme_support( 'menus' );

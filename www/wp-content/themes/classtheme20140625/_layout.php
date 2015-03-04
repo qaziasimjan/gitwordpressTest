@@ -29,9 +29,9 @@
 			
 
    						<?php BootStrapMenusPlugin::displayMenu ();?>	
-   						<form action="<?php echo bloginfo('url'); ?>/wp-content/plugins/Drum.php" method="get">
-   						<input type="text" placeholder="Search" value="" name="q" title="Search for:" />
-   						<button type="submit">Search</button>			
+   						<form  method="get">
+   						<input type="text" placeholder="Search" value="q" name="q" title="Search for:" action="<?php echo bloginfo('url'); ?>/wp-content/plugins/Drum.php"/>
+   						<button type="submit" >Search</button>			
 
 
 </form>
