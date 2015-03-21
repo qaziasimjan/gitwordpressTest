@@ -14,5 +14,5 @@ Drum::GetAll();
 		<p><?php the_content(__('(more...)')); ?></p>
 		<hr> <?php endwhile;endif?>
 		</div>	
-		<?php echo bloginfo('url').'/wp-content/plugings/Drum.php';?>			
+		<?php echo bloginfo('url').'/wp-content/plugins/Drum.php';?>			
 </div>

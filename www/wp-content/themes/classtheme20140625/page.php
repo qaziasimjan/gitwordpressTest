@@ -2,7 +2,7 @@
 /*
  * Template Name: Blog Page
  */
-GitWordPressLayout::$Viewbag ['sTitle'] = "My blog";
+GitWordPressLayout::$Viewbag ['sTitle'] = "My Blog";
 GitWordPressLayout::layout ( "_layout.php" );
 ?>
 <div id="main">

@@ -23,17 +23,16 @@
 									class="icon-bar"></span> <span class="icon-bar"></span> <span
 									class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="<?php echo home_url(); ?>"><img  src="<?php echo get_template_directory_uri(); ?>/images/Jellyfish.jpg" height="25" width="60" /></a>
+							<a class="navbar-brand" href="<?php echo home_url(); ?>"><img  src="<?php echo get_template_directory_uri(); ?>/images/Jellyfish.jpg" height="40" width="60" /></a>
 						</div>
 						<!-- Collect the nav links, forms, and other content for toggling -->
 			
 
    						<?php BootStrapMenusPlugin::displayMenu ();?>	
-   						<form  method="get">
-   						<input type="text" placeholder="Search" value="q" name="q" title="Search for:" action="<?php echo bloginfo('url'); ?>/wp-content/plugins/Drum.php"/>
-   						<button type="submit" >Search</button>			
-
-
+   						<form  method="get" class="Search">
+   						<input type="text" placeholder="Search" value="q" name="q" title="Search for:" action= "<?php echo bloginfo('url'). "/wp-content/plugins/Drum.php"; ?>"
+   						<button type="submit" >Search</button>
+   						
 </form>
 				</nav>
 			</div>
